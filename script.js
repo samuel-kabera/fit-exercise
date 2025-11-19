@@ -63,7 +63,6 @@ const activeFiltersCount = document.getElementById("activeFiltersCount");
 const typeFilters = document.getElementById("typeFilters");
 const muscleFilters = document.getElementById("muscleFilters");
 const difficultyFilters = document.getElementById("difficultyFilters");
-const equipmentFilters = document.getElementById("equipmentFilters");
 const exerciseGrid = document.getElementById("exerciseGrid");
 const resultsCount = document.getElementById("resultsCount");
 const typeCount = document.getElementById("typeCount");
@@ -122,7 +121,6 @@ function createFilterCheckboxes() {
             }">
             <span>${equipments[i].replace(/_/g, " ")}</span>
         `;
-    equipmentFilters.appendChild(label);
   }
 }
 
