@@ -1,0 +1,431 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  background-color: rgb(249, 250, 251);
+  color: rgb(17, 24, 39);
+  line-height: 1.6;
+}
+
+.header {
+  background: rgb(255, 255, 255);
+  border-bottom: 1px solid rgb(229, 231, 235);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.header-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.header-title i {
+  font-size: 2rem;
+  color: rgb(37, 99, 235);
+}
+
+.header-title h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(17, 24, 39);
+}
+
+/* Search Bar Styles */
+.search-container {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgb(156, 163, 175);
+  font-size: 1.25rem;
+}
+
+#searchInput {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  border: 1px solid rgb(209, 213, 219);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#searchInput:focus {
+  border-color: rgb(37, 99, 235);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+.layout {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Filters Sidebar */
+.sidebar {
+  width: 16rem;
+  flex-shrink: 0;
+}
+
+.sidebar-content {
+  background: rgb(255, 255, 255);
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  position: sticky;
+  top: 6rem;
+  max-height: calc(100vh - 7rem);
+  overflow-y: auto;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.sidebar-header h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: rgb(17, 24, 39);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sidebar-header h2 i {
+  color: rgb(37, 99, 235);
+}
+
+.clear-btn {
+  background: none;
+  border: none;
+  color: rgb(156, 163, 175);
+  font-size: 0.875rem;
+  cursor: not-allowed;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.clear-btn.active {
+  color: rgb(37, 99, 235);
+  cursor: pointer;
+}
+
+.clear-btn.active:hover {
+  color: rgb(29, 78, 216);
+}
+
+.filter-count {
+  padding: 0.5rem 0.75rem;
+  background: rgb(239, 246, 255);
+  border: 1px solid rgb(191, 219, 254);
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.filter-count p {
+  font-size: 0.875rem;
+  color: rgb(30, 64, 175);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filter-count i {
+  color: rgb(37, 99, 235);
+}
+
+.filter-section {
+  margin-bottom: 1.5rem;
+}
+
+.filter-section h3 {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgb(55, 65, 81);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filter-section h3 i {
+  color: rgb(107, 114, 128);
+  font-size: 0.875rem;
+}
+
+.filter-section h3 .count {
+  color: rgb(37, 99, 235);
+  margin-left: auto;
+}
+
+.filter-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.filter-option:hover {
+  background: rgb(249, 250, 251);
+}
+
+.filter-option input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+  accent-color: rgb(37, 99, 235);
+}
+
+.filter-option span {
+  font-size: 0.875rem;
+  color: rgb(107, 114, 128);
+  text-transform: capitalize;
+}
+
+.filter-option.selected span {
+  color: rgb(17, 24, 39);
+  font-weight: 500;
+}
+
+/* Exercise Cards */
+.main-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.results-count {
+  color: rgb(107, 114, 128);
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.results-count i {
+  color: rgb(156, 163, 175);
+}
+
+.exercise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.exercise-card {
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(229, 231, 235);
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.exercise-card:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.exercise-card h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: rgb(17, 24, 39);
+  margin-bottom: 0.75rem;
+}
+
+.exercise-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.badge {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.badge i {
+  font-size: 0.625rem;
+}
+
+.badge-type {
+  background: rgb(219, 234, 254);
+  color: rgb(30, 64, 175);
+}
+
+.badge-muscle {
+  background: rgb(233, 213, 255);
+  color: rgb(107, 33, 168);
+}
+
+.badge-difficulty {
+  background: rgb(220, 252, 231);
+  color: rgb(21, 128, 61);
+}
+
+.exercise-equipment {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: rgb(107, 114, 128);
+  margin-bottom: 1rem;
+}
+
+.exercise-equipment i {
+  color: rgb(156, 163, 175);
+}
+
+.view-details-btn {
+  width: 100%;
+  padding: 0.5rem;
+  background: rgb(37, 99, 235);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  font-size: 0.875rem;
+}
+
+.view-details-btn:hover {
+  background: rgb(29, 78, 216);
+}
+
+.view-details-btn:active {
+  transform: scale(0.98);
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.pagination button {
+  padding: 0.5rem 1rem;
+  border: 1px solid rgb(209, 213, 219);
+  background: rgb(255, 255, 255);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+  font-size: 0.875rem;
+  color: rgb(55, 65, 81);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pagination button:hover {
+  background: rgb(249, 250, 251);
+  border-color: rgb(156, 163, 175);
+}
+
+.pagination button.active {
+  background: rgb(37, 99, 235);
+  color: rgb(255, 255, 255);
+  border-color: rgb(37, 99, 235);
+}
+
+.pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Tablet View */
+@media (max-width: 1024px) {
+  .sidebar {
+    display: none;
+  }
+
+  .exercise-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .header-content {
+    padding: 0.75rem;
+  }
+
+  .header-title h1 {
+    font-size: 1.25rem;
+  }
+
+  .header-title i {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    padding: 1rem 0.75rem;
+  }
+
+  .exercise-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pagination button {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.75rem;
+  }
+}
