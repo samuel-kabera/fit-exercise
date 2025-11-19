@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitExercise - Exercises Repository</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- HEADER SECTION - Search Bar & Branding -->
+    <header class="header">
+      <div class="header-content">
+        <!-- Logo and Title -->
+        <div class="header-title">
+          <i class="fa-solid fa-dumbbell"></i>
+          <h1>FitExercise</h1>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search exercises... (e.g., biceps, push-ups, strength)"
+          />
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="layout">
+        <!-- Filters Sidebar -->
+        <aside class="sidebar">
+          <div class="sidebar-content">
+            <div class="sidebar-header">
+              <h2><i class="fa-solid fa-filter"></i> Filters</h2>
+              <button class="clear-btn" id="clearAllBtn">
+                <i class="fa-solid fa-xmark"></i> Clear all
+              </button>
+            </div>
+
+            <!-- Active Filters Counter  -->
+            <div id="filterCount" class="filter-count hidden">
+              <p>
+                <i class="fa-solid fa-circle-check"></i>
+                <span id="activeFiltersCount">0</span> filters active
+              </p>
+            </div>
+
+            <!-- Type Filter Section -->
+            <div class="filter-section">
+              <h3>
+                <i class="fa-solid fa-list-check"></i> Type
+                <span class="count" id="typeCount"></span>
+              </h3>
+              <div class="filter-options" id="typeFilters"></div>
+            </div>
+
+            <!-- Muscle Group Filter Section -->
+            <div class="filter-section">
+              <h3>
+                <i class="fa-solid fa-person-walking"></i> Muscle Group
+                <span class="count" id="muscleCount"></span>
+              </h3>
+              <div class="filter-options" id="muscleFilters"></div>
+            </div>
+
+            <!-- Difficulty Filter Section -->
+            <div class="filter-section">
+              <h3>
+                <i class="fa-solid fa-signal"></i> Difficulty
+                <span class="count" id="difficultyCount"></span>
+              </h3>
+              <div class="filter-options" id="difficultyFilters"></div>
+            </div>
+
+            <!-- Equipment Filter Section -->
+            <div class="filter-section">
+              <h3>
+                <i class="fa-solid fa-dumbbell"></i> Equipment
+                <span class="count" id="equipmentCount"></span>
+              </h3>
+              <div class="filter-options" id="equipmentFilters"></div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Exercise Cards -->
+        <main class="main-content">
+          <div class="results-header">
+            <p class="results-count">
+              <i class="fa-solid fa-list"></i> Showing
+              <span id="resultsCount">0</span> exercises
+            </p>
+          </div>
+
+          <div class="exercise-grid" id="exerciseGrid"></div>
+
+          <!-- Pagination Controls -->
+          <div class="pagination">
+            <button><i class="fa-solid fa-chevron-left"></i> Previous</button>
+            <button class="active">1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>Next <i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
