@@ -53,7 +53,6 @@ let allExercises = [];
 let selectedTypeFilters = [];
 let selectedMuscleFilters = [];
 let selectedDifficultyFilters = [];
-let selectedEquipmentFilters = [];
 
 // Get elements from HTML
 const searchInput = document.getElementById("searchInput");
@@ -68,7 +67,6 @@ const resultsCount = document.getElementById("resultsCount");
 const typeCount = document.getElementById("typeCount");
 const muscleCount = document.getElementById("muscleCount");
 const difficultyCount = document.getElementById("difficultyCount");
-const equipmentCount = document.getElementById("equipmentCount");
 
 // Create filter checkboxes
 function createFilterCheckboxes() {
@@ -174,8 +172,7 @@ function updateFilterCounts() {
   let total =
     selectedTypeFilters.length +
     selectedMuscleFilters.length +
-    selectedDifficultyFilters.length +
-    selectedEquipmentFilters.length;
+    selectedDifficultyFilters.length;
 
   activeFiltersCount.textContent = total;
 
@@ -204,12 +201,6 @@ function updateFilterCounts() {
     difficultyCount.textContent = "(" + selectedDifficultyFilters.length + ")";
   } else {
     difficultyCount.textContent = "";
-  }
-
-  if (selectedEquipmentFilters.length > 0) {
-    equipmentCount.textContent = "(" + selectedEquipmentFilters.length + ")";
-  } else {
-    equipmentCount.textContent = "";
   }
 }
 
@@ -303,20 +294,6 @@ function showFilteredExercises() {
         }
       }
       if (!difficultyMatches) {
-        matchesFilters = false;
-      }
-    }
-
-    // Check equipment filter
-    if (selectedEquipmentFilters.length > 0) {
-      let equipmentMatches = false;
-      for (let j = 0; j < selectedEquipmentFilters.length; j++) {
-        if (exercise.equipment === selectedEquipmentFilters[j]) {
-          equipmentMatches = true;
-          break;
-        }
-      }
-      if (!equipmentMatches) {
         matchesFilters = false;
       }
     }
