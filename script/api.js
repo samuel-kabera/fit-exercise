@@ -10,7 +10,7 @@ export async function loadExercises() {
       },
     });
 
-    if (response.ok) {
+    if (!response.ok) {
       throw new Error("API is currently down");
     }
 
